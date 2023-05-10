@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import {
   Table,
   TableBody,
@@ -13,6 +14,7 @@ import { Badge } from "@/components/ui/badge"
 
 import prisma from './lib/prisma'
 import {months} from './lib/dateUtils'
+export const revalidate = 60
 
 export default async function Home() {
   const people = await prisma.person.findMany({})
