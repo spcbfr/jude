@@ -8,6 +8,13 @@ datasource db {
   relationMode = "prisma"
 }
 
+enum Group {
+  highschool
+  college
+  family
+  work
+}
+
 model person {
   id          Int     @id @default(autoincrement())
   first_name  String?
@@ -15,4 +22,5 @@ model person {
   birth_day   Int?    @db.TinyInt
   birth_month Int?    @db.TinyInt
   birth_year  Int?    @db.Year
+  group       Group
 }
