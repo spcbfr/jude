@@ -27,14 +27,16 @@ export default async function Home() {
       <TableHead>Full Name</TableHead>
       <TableHead>Birthday</TableHead>
       <TableHead>Group</TableHead>
+      <TableHead>Creation Date</TableHead>
     </TableRow>
   </TableHeader>
   <TableBody>
     {people.map((person) => (
     <TableRow key={person.id}>
-      <TableCell>{person.first_name} {person.last_name}</TableCell>
-      <TableCell>{person.birth_day} {person.birth_month ? months[person.birth_month - 1] : null} {person.birth_year}</TableCell>
+      <TableCell>{person.firstName} {person.lastName}</TableCell>
+      <TableCell>{person.birthDay} {person.birthMonth ? months[person.birthMonth - 1] : null} {person.birthYear}</TableCell>
       <TableCell><Badge>{person.group}</Badge></TableCell>
+      <TableCell><Badge>{person.createdAt.toString()}</Badge></TableCell>
     </TableRow>
     ))}
   </TableBody>
